@@ -1,0 +1,42 @@
+{
+  "id": "Q08",
+  "title": "Item include overrides a cluster exclude, for an item inside the base",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 4; 5 example 5; 8.8 'leaf override'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A1",
+            "op": "exclude"
+          },
+          {
+            "item": "i3",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i3",
+          "i5",
+          "i6",
+          "i7",
+          "i8"
+        ]
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "A has only an exclusion, so the rest of the base stays. i3 is restored by the item rule."
+}

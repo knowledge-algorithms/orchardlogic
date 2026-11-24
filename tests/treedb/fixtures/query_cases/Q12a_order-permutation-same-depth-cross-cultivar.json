@@ -1,0 +1,39 @@
+{
+  "id": "Q12a",
+  "title": "Same-depth rules in two cultivars: result is identical for every rule order",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 ('remove timestamp/order dependence'); 8.8 'order independence'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          },
+          {
+            "cultivar": "B",
+            "node": "B3",
+            "op": "exclude"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i2"
+        ]
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "A3 and B3 are both depth 2. Observed UI resolves i1 by timestamp, so the result depends on rule order."
+}

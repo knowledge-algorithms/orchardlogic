@@ -1,0 +1,40 @@
+{
+  "id": "Q13a",
+  "title": "Identical duplicate rule on the same node: idempotent",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 'Needs deliberate resolution' (duplicates); OD-6 family 1, benign case",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i1",
+          "i2"
+        ]
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "Treating identical duplicates as idempotent is itself an arbitrary choice; see LEDGER_STUDY."
+}

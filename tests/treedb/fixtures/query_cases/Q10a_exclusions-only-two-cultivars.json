@@ -1,0 +1,41 @@
+{
+  "id": "Q10a",
+  "title": "Only exclusions, in two cultivars: base minus both excluded populations",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 final example; 8.8 'exclusions only'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "exclude"
+          },
+          {
+            "cultivar": "B",
+            "node": "B6",
+            "op": "exclude"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i3",
+          "i5",
+          "i6",
+          "i7"
+        ]
+      }
+    }
+  ],
+  "permute": true
+}

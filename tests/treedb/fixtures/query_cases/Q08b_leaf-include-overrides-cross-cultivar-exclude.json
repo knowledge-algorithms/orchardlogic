@@ -1,0 +1,41 @@
+{
+  "id": "Q08b",
+  "title": "Item include overrides an exclusion in another cultivar",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 4",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "B",
+            "node": "B1",
+            "op": "exclude"
+          },
+          {
+            "item": "i1",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i1",
+          "i3",
+          "i4",
+          "i7",
+          "i8"
+        ]
+      }
+    }
+  ],
+  "permute": true
+}

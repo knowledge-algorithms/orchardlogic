@@ -1,0 +1,39 @@
+{
+  "id": "Q02",
+  "title": "Included ancestor, excluded descendant: descendant removed (same cultivar)",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 2; 8.8 'ancestor versus descendant override', opposite direction",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A1",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "exclude"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i3",
+          "i4"
+        ]
+      }
+    }
+  ],
+  "permute": true
+}

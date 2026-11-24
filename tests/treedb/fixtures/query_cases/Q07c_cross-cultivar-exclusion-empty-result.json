@@ -1,0 +1,37 @@
+{
+  "id": "Q07c",
+  "title": "Exclusion removes the whole included population: empty cohort is a valid result",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 3; arbitrary choice: empty result is not an error (the UI blocks Go when scope is empty)",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          },
+          {
+            "cultivar": "B",
+            "node": "B1",
+            "op": "exclude"
+          }
+        ]
+      },
+      "expected": {
+        "items": []
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "A3={i1,i2} is a subset of B1={i1,i2,i5,i6}."
+}

@@ -1,0 +1,52 @@
+{
+  "id": "Q12b",
+  "title": "Four rules over both cultivars: identical for every order",
+  "fixture": "F7/twocult8_shared",
+  "clause": "8.8 'order independence'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A1",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "exclude"
+          },
+          {
+            "cultivar": "A",
+            "node": "A5",
+            "op": "include"
+          },
+          {
+            "cultivar": "B",
+            "node": "B4",
+            "op": "exclude"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i3",
+          "i4",
+          "i7",
+          "i8"
+        ]
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "A predicate = {i3,i4,i6,i7,i8}; B excludes {i2,i6}. A5 and B4 tie at depth 2 for i6 in the UI."
+}

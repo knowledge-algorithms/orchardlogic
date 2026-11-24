@@ -1,0 +1,34 @@
+{
+  "id": "Q11b",
+  "title": "No rules at all: result equals the base",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 1 (result is a subset of Cbase; empty query is the identity)",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": []
+      },
+      "expected": {
+        "items": [
+          "i1",
+          "i2",
+          "i3",
+          "i4",
+          "i5",
+          "i6",
+          "i7",
+          "i8"
+        ]
+      }
+    }
+  ],
+  "permute": true
+}

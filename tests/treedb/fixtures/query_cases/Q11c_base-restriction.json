@@ -1,0 +1,42 @@
+{
+  "id": "Q11c",
+  "title": "Result is restricted to the base cohort",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 1; 8.7 'selected cohort is a subset of its base'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c1": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ]
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c1"
+        },
+        "rules": [
+          {
+            "cultivar": "B",
+            "node": "B1",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i1",
+          "i2",
+          "i5"
+        ]
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "B1={i1,i2,i5,i6}; i6 is outside c1."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "Q06",
+  "title": "Includes in two cultivars intersect (the observed UI unions them)",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 3; 5 example 3; 8.8 'cross-cultivar intersection'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A1",
+            "op": "include"
+          },
+          {
+            "cultivar": "B",
+            "node": "B1",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i1",
+          "i2"
+        ]
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "A1={i1..i4}, B1={i1,i2,i5,i6}."
+}

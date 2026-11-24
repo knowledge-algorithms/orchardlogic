@@ -1,0 +1,114 @@
+[
+  {
+    "item_id": "bread-starter",
+    "title": "Sourdough starter",
+    "group": "bread",
+    "source": "invented",
+    "text": "Feed a flour-and-water sourdough starter twice a day. It is ready when it doubles between feedings and smells like ripe fruit."
+  },
+  {
+    "item_id": "bread-shape",
+    "title": "Loaf shaping",
+    "group": "bread",
+    "source": "invented",
+    "text": "Shape the dough into a tight round so the skin holds gas. Rest it seam-side up in a floured basket until the round feels airy."
+  },
+  {
+    "item_id": "bread-score",
+    "title": "Loaf scoring",
+    "group": "bread",
+    "source": "invented",
+    "text": "Score the top of the loaf with a lame just before baking. One long cut lets the loaf open while it bakes."
+  },
+  {
+    "item_id": "bread-oven",
+    "title": "Dutch oven bake",
+    "group": "bread",
+    "source": "invented",
+    "text": "Bake the loaf in a hot Dutch oven with the lid on, then finish with the lid off until the crust is deep brown."
+  },
+  {
+    "item_id": "bike-flat",
+    "title": "Inner tube patch",
+    "group": "bicycle",
+    "source": "invented",
+    "text": "Remove the wheel, pry off the tire bead, and pull out the tube. Patch the hole or fit a new tube, then reseat the tire."
+  },
+  {
+    "item_id": "bike-brake",
+    "title": "Brake pads",
+    "group": "bicycle",
+    "source": "invented",
+    "text": "Replace worn brake pads when the wear line is gone. Align each pad so it meets the rim and misses the tire."
+  },
+  {
+    "item_id": "bike-chain",
+    "title": "Chain oil",
+    "group": "bicycle",
+    "source": "invented",
+    "text": "Wipe the chain dry and add one drop of chain oil to each roller. Wipe off the extra oil so road grit does not stick."
+  },
+  {
+    "item_id": "bike-spoke",
+    "title": "Spoke tension",
+    "group": "bicycle",
+    "source": "invented",
+    "text": "Pluck the spokes and tighten the nipples until the wheel is round. Even tension keeps the rim from wobbling."
+  },
+  {
+    "item_id": "library-due",
+    "title": "Due date stamp",
+    "group": "library",
+    "source": "invented",
+    "text": "Stamp the due date on the checkout card and tell the reader the day the books must come back to the desk."
+  },
+  {
+    "item_id": "library-return",
+    "title": "Shelf return",
+    "group": "library",
+    "source": "invented",
+    "text": "Take returned books off the counter and shelve them in call-number order on the floor named on the spine label."
+  },
+  {
+    "item_id": "library-hold",
+    "title": "Hold request",
+    "group": "library",
+    "source": "invented",
+    "text": "Place a hold when the book is out. Tell the reader when a returned copy is waiting at the desk."
+  },
+  {
+    "item_id": "library-fine",
+    "title": "Late fine",
+    "group": "library",
+    "source": "invented",
+    "text": "Charge a small fine for each day a book is late. Waive the fine when the reader brings a written excuse."
+  },
+  {
+    "item_id": "weather-rain",
+    "title": "Rain gauge",
+    "group": "weather",
+    "source": "invented",
+    "text": "Empty the rain gauge at the same time each morning and write down the depth in millimeters."
+  },
+  {
+    "item_id": "weather-wind",
+    "title": "Wind vane",
+    "group": "weather",
+    "source": "invented",
+    "text": "Read the anemometer cups for wind speed and the vane for direction. Record a gust separately from the steady wind."
+  },
+  {
+    "item_id": "weather-temp",
+    "title": "Shade thermometer",
+    "group": "weather",
+    "source": "invented",
+    "text": "Read the thermometer in the shade, away from the building wall. Write the high and the low for the day."
+  },
+  {
+    "item_id": "weather-pressure",
+    "title": "Barometer reading",
+    "group": "weather",
+    "source": "invented",
+    "text": "Tap the barometer gently and record the pressure. A steady drop means a storm is likely later in the day."
+  }
+]

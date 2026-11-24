@@ -1,0 +1,41 @@
+{
+  "id": "Q04",
+  "title": "Included disjoint siblings: union of their populations",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 2; 5 example 1; 8.8 'sibling union'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A4",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i1",
+          "i2",
+          "i3",
+          "i4"
+        ]
+      }
+    }
+  ],
+  "permute": true
+}

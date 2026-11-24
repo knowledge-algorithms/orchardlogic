@@ -1,0 +1,8 @@
+OrchardLogic
+Copyright 2026 Energy Algorithms, LLC
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+OrchardLogic incorporates the Orchard and TreeDB libraries, previously maintained
+in the repositories listed in PROVENANCE.md and ported from earlier work owned by
+Energy Algorithms, LLC.

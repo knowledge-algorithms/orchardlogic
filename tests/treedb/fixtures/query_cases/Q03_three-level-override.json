@@ -1,0 +1,45 @@
+{
+  "id": "Q03",
+  "title": "Include ancestor, exclude middle, include deeper: deepest rule wins at every item",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 'Needs deliberate resolution' (included ancestor, excluded descendant, deeper included descendant)",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A2",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A5",
+            "op": "exclude"
+          },
+          {
+            "cultivar": "A",
+            "node": "A6",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i5",
+          "i7",
+          "i8"
+        ]
+      }
+    }
+  ],
+  "permute": true
+}

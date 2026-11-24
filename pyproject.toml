@@ -1,0 +1,60 @@
+[project]
+name = "orchardlogic"
+version = "0.1.0"
+description = "Cultivating decision-ready knowledge structures"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Energy Algorithms, LLC" }]
+keywords = ["hierarchy", "taxonomy", "clustering", "tree", "knowledge-structure", "duckdb"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+# Union of the two source packages' runtime dependencies (orchard 611de12, treeDB a1e0a93).
+dependencies = [
+    "numpy>=2.0,<3",
+    "scipy>=1.11,<2",
+    "scikit-learn>=1.4,<2",
+    "duckdb>=1.1",
+]
+
+[project.optional-dependencies]
+# Neural layers in cultivate (MiniLM descriptions, ModernBERT taxonomy heads).
+embeddings = ["torch>=2.2", "transformers>=4.41"]
+taxonomy-ml = ["torch>=2.2", "transformers>=4.41"]
+# Live LLM labeling in cultivate.labeling.
+labeling = ["openai>=1.40"]
+
+[project.urls]
+Homepage = "https://github.com/doc1000/orchardlogic"
+Issues = "https://github.com/doc1000/orchardlogic/issues"
+
+[dependency-groups]
+dev = ["pytest>=8.4,<9"]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/orchardlogic"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/orchardlogic", "tests", "docs", "examples", "README.md", "LICENSE", "NOTICE", "PROVENANCE.md", "CONTRIBUTING.md", "RELEASING.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = '-p no:cacheprovider -m "not live_labeling"'
+markers = [
+    "optional_model: live neural model; may use a local snapshot and is not required in CI",
+    "live_labeling: live OpenAI labeling on the 16-document fixture; excluded from default pytest",
+]

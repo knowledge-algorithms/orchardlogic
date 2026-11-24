@@ -1,0 +1,41 @@
+{
+  "id": "Q13b1",
+  "title": "Same node both included and excluded, no marker (OD-6 family 1)",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 'duplicate contradictory rule on the same node'; 8.8 'duplicate/conflicting rules'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "exclude"
+          },
+          {
+            "cultivar": "A",
+            "node": "A4",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "error": "CONFLICT_NODE"
+      }
+    }
+  ],
+  "permute": true
+}

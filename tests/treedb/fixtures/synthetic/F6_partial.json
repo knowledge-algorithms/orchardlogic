@@ -1,0 +1,445 @@
+{
+  "cases": {
+    "cohorts": [
+      {
+        "cultivar": "full",
+        "item_ids": ["p0", "p1", "p2", "p3", "p4", "p5", "p6", "p7"],
+        "kind": "whole",
+        "name": "full.whole"
+      },
+      {
+        "cultivar": "full",
+        "item_ids": ["p0", "p1", "p4", "p5"],
+        "kind": "root_lca",
+        "name": "full.root_lca"
+      },
+      {
+        "cultivar": "full",
+        "item_ids": ["p0", "p1", "p2", "p3"],
+        "kind": "stem",
+        "name": "full.stem"
+      },
+      {
+        "cultivar": "full",
+        "item_ids": ["p0"],
+        "kind": "single",
+        "name": "full.single"
+      },
+      {
+        "cultivar": "full",
+        "item_ids": ["p0", "p1"],
+        "kind": "siblings",
+        "name": "full.siblings"
+      },
+      {
+        "cultivar": "partial",
+        "item_ids": ["p0", "p1", "p2", "p3", "p4", "p5"],
+        "kind": "whole",
+        "name": "partial.whole"
+      },
+      {
+        "cultivar": "partial",
+        "item_ids": ["p0", "p1", "p5"],
+        "kind": "root_lca",
+        "name": "partial.root_lca"
+      },
+      {
+        "cultivar": "partial",
+        "item_ids": ["p0", "p1", "p2", "p3", "p4"],
+        "kind": "stem",
+        "name": "partial.stem"
+      },
+      {
+        "cultivar": "partial",
+        "item_ids": ["p0"],
+        "kind": "single",
+        "name": "partial.single"
+      },
+      {
+        "cultivar": "partial",
+        "item_ids": ["p0", "p1"],
+        "kind": "siblings",
+        "name": "partial.siblings"
+      },
+      {
+        "cultivar": "partial",
+        "item_ids": ["p0", "p1", "p6", "p7"],
+        "kind": "with_missing",
+        "name": "partial.with_missing",
+        "note": "p6 and p7 are absent from cultivar 'partial' (OD-5: must not be dropped silently)"
+      },
+      {
+        "cultivar": "partial",
+        "item_ids": ["p0", "p1", "p2", "p3", "p4", "p5", "p6", "p7"],
+        "kind": "with_missing",
+        "name": "partial.all_items",
+        "note": "whole fixture membership over a cultivar that lacks 2 items"
+      }
+    ],
+    "entry_points": [
+      {
+        "cultivar": "full",
+        "name": "full.internal_entry",
+        "node_key": "member_dbe7c2f22ece8daea1ed6645a1f8834c999ec8667d0c8d5dcb29389ab35f67d4",
+        "note": "non-leaf entry point (INV-7)"
+      },
+      {
+        "cultivar": "partial",
+        "name": "partial.internal_entry",
+        "node_key": "member_71a0ad5cb60e33c1797dcc178f91aff8ccdfd69db22cc30ab4ec10db91a6778c",
+        "note": "non-leaf entry point (INV-7)"
+      }
+    ],
+    "mutations": [
+      {
+        "confirmed": false,
+        "cultivar": "full",
+        "description": "detach one leaf",
+        "expect": "ok",
+        "name": "full.detach_leaf",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_af525c70e92a103a33c4cb8c7d0d694704c84c605665ab58f267f61f94aa7a31"
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "full",
+        "description": "detach a leaf, attach it back above its former sibling",
+        "expect": "ok",
+        "name": "full.round_trip",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_af525c70e92a103a33c4cb8c7d0d694704c84c605665ab58f267f61f94aa7a31"
+          },
+          {
+            "above": "member_a49ba8bb2e513b949be40d114a144ced7ad3852164005c4ad1878e10049b787a",
+            "coph_distance": 0.2,
+            "edge_type": "leaf",
+            "op": "attach",
+            "subject": {
+              "item_id": "p0"
+            }
+          }
+        ],
+        "topology_equals_original": true
+      },
+      {
+        "confirmed": false,
+        "cultivar": "full",
+        "description": "detach a leaf, attach it on the edge above another leaf",
+        "expect": "ok",
+        "name": "full.attach_to_edge",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_af525c70e92a103a33c4cb8c7d0d694704c84c605665ab58f267f61f94aa7a31"
+          },
+          {
+            "above": "member_ac03da34faf0d3d6d64d9eaee40cc242bbd9905f06d87a39ec03ec14cf311cbd",
+            "coph_distance": 0.175,
+            "edge_type": "leaf",
+            "op": "attach",
+            "subject": {
+              "item_id": "p0"
+            }
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "full",
+        "description": "detach an internal subtree",
+        "expect": "ok",
+        "name": "full.detach_subtree",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_39c3da8bf75998a5d1a480d1e4dcccae7d87573acd8c309876619dfff9d6c09e"
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "full",
+        "description": "detach a leaf, detach a subtree, attach the leaf on another edge",
+        "expect": "ok",
+        "name": "full.nested",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_ac03da34faf0d3d6d64d9eaee40cc242bbd9905f06d87a39ec03ec14cf311cbd"
+          },
+          {
+            "op": "detach",
+            "target": "member_39c3da8bf75998a5d1a480d1e4dcccae7d87573acd8c309876619dfff9d6c09e"
+          },
+          {
+            "above": "member_73902b74f3deea24a06ff8b0b8f669f3acf84a6494954b1f96d22ebafe62ff2e",
+            "coph_distance": null,
+            "edge_type": "leaf",
+            "op": "attach",
+            "subject": {
+              "item_id": "p7"
+            }
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "full",
+        "description": "detaching the root has no sibling and no orchard row",
+        "expect": "error",
+        "name": "full.invalid_detach_root",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_a2ff5f0c4a79e5b50eda236847dd01b3012fe0aa5638902a128edecdcfbed43b"
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "full",
+        "description": "detach a node key that is not in the tree",
+        "expect": "error",
+        "name": "full.invalid_detach_unknown",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_add5a7a90b03139f8f5f20b9906f4d60859327d495a8458bb17fd7a1ca3736ce"
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "full",
+        "description": "attach above a node key that is not in the tree",
+        "expect": "error",
+        "name": "full.invalid_attach_unknown_edge",
+        "steps": [
+          {
+            "above": "member_add5a7a90b03139f8f5f20b9906f4d60859327d495a8458bb17fd7a1ca3736ce",
+            "coph_distance": null,
+            "edge_type": "leaf",
+            "op": "attach",
+            "subject": {
+              "item_id": "__new_item__"
+            }
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "full",
+        "description": "attach an item that is still in the tree (intended: an item appears once per tree)",
+        "expect": "error",
+        "name": "full.invalid_attach_duplicate_item",
+        "note": "intended invariant; PostgreSQL may not enforce it (inferred)",
+        "steps": [
+          {
+            "above": "member_ac03da34faf0d3d6d64d9eaee40cc242bbd9905f06d87a39ec03ec14cf311cbd",
+            "coph_distance": null,
+            "edge_type": "leaf",
+            "op": "attach",
+            "subject": {
+              "item_id": "p0"
+            }
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "partial",
+        "description": "detach one leaf",
+        "expect": "ok",
+        "name": "partial.detach_leaf",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_af525c70e92a103a33c4cb8c7d0d694704c84c605665ab58f267f61f94aa7a31"
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "partial",
+        "description": "detach a leaf, attach it back above its former sibling",
+        "expect": "ok",
+        "name": "partial.round_trip",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_af525c70e92a103a33c4cb8c7d0d694704c84c605665ab58f267f61f94aa7a31"
+          },
+          {
+            "above": "member_a49ba8bb2e513b949be40d114a144ced7ad3852164005c4ad1878e10049b787a",
+            "coph_distance": 0.1,
+            "edge_type": "leaf",
+            "op": "attach",
+            "subject": {
+              "item_id": "p0"
+            }
+          }
+        ],
+        "topology_equals_original": true
+      },
+      {
+        "confirmed": false,
+        "cultivar": "partial",
+        "description": "detach a leaf, attach it on the edge above another leaf",
+        "expect": "ok",
+        "name": "partial.attach_to_edge",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_af525c70e92a103a33c4cb8c7d0d694704c84c605665ab58f267f61f94aa7a31"
+          },
+          {
+            "above": "member_a59e6c13583c6dbb8e76ac90b96e3083b9a13773f694b7e13a49c78ef6c486f2",
+            "coph_distance": 0.25,
+            "edge_type": "leaf",
+            "op": "attach",
+            "subject": {
+              "item_id": "p0"
+            }
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "partial",
+        "description": "detach an internal subtree",
+        "expect": "ok",
+        "name": "partial.detach_subtree",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_dbe7c2f22ece8daea1ed6645a1f8834c999ec8667d0c8d5dcb29389ab35f67d4"
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "partial",
+        "description": "detach a leaf, detach a subtree, attach the leaf on another edge",
+        "expect": "ok",
+        "name": "partial.nested",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_9a35e327e80d35a1f4e2d18a5f1706dbc27f3fc6cfc19a912ff613050f7402a9"
+          },
+          {
+            "op": "detach",
+            "target": "member_cf2e48c742c854dfbd3dd87073ea2e14ac64c96e5e61dffcdbad34ba52b56854"
+          },
+          {
+            "above": "member_2030fd44e5a101f73be4cb269502cd660eadafc00c7a34ef4ad73e13a07cf13f",
+            "coph_distance": null,
+            "edge_type": "leaf",
+            "op": "attach",
+            "subject": {
+              "item_id": "p4"
+            }
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "partial",
+        "description": "detaching the root has no sibling and no orchard row",
+        "expect": "error",
+        "name": "partial.invalid_detach_root",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_049b88bb2114662d26822ff342db40d2393f9c9c20976b9df6425fb4b7a7a4af"
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "partial",
+        "description": "detach a node key that is not in the tree",
+        "expect": "error",
+        "name": "partial.invalid_detach_unknown",
+        "steps": [
+          {
+            "op": "detach",
+            "target": "member_add5a7a90b03139f8f5f20b9906f4d60859327d495a8458bb17fd7a1ca3736ce"
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "partial",
+        "description": "attach above a node key that is not in the tree",
+        "expect": "error",
+        "name": "partial.invalid_attach_unknown_edge",
+        "steps": [
+          {
+            "above": "member_add5a7a90b03139f8f5f20b9906f4d60859327d495a8458bb17fd7a1ca3736ce",
+            "coph_distance": null,
+            "edge_type": "leaf",
+            "op": "attach",
+            "subject": {
+              "item_id": "__new_item__"
+            }
+          }
+        ]
+      },
+      {
+        "confirmed": false,
+        "cultivar": "partial",
+        "description": "attach an item that is still in the tree (intended: an item appears once per tree)",
+        "expect": "error",
+        "name": "partial.invalid_attach_duplicate_item",
+        "note": "intended invariant; PostgreSQL may not enforce it (inferred)",
+        "steps": [
+          {
+            "above": "member_a59e6c13583c6dbb8e76ac90b96e3083b9a13773f694b7e13a49c78ef6c486f2",
+            "coph_distance": null,
+            "edge_type": "leaf",
+            "op": "attach",
+            "subject": {
+              "item_id": "p0"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "cultivars": [
+    {
+      "name": "full",
+      "z": [
+        [0, 1, 0.2, 2],
+        [2, 3, 0.25, 2],
+        [4, 5, 0.3, 2],
+        [6, 7, 0.35, 2],
+        [8, 9, 0.6, 4],
+        [10, 11, 0.7, 4],
+        [12, 13, 1.0, 8]
+      ]
+    },
+    {
+      "item_ids": ["p0", "p1", "p2", "p3", "p4", "p5"],
+      "name": "partial",
+      "z": [
+        [0, 1, 0.1, 2],
+        [6, 2, 0.2, 3],
+        [7, 3, 0.3, 4],
+        [8, 4, 0.4, 5],
+        [9, 5, 0.5, 6]
+      ]
+    }
+  ],
+  "description": "second cultivar is missing p6 and p7 (OD-5 data)",
+  "format": "treedb_fixture_v1",
+  "item_ids": ["p0", "p1", "p2", "p3", "p4", "p5", "p6", "p7"],
+  "name": "partial"
+}

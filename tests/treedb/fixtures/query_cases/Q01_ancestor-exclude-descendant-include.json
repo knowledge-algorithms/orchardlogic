@@ -1,0 +1,44 @@
+{
+  "id": "Q01",
+  "title": "Excluded ancestor, included descendant: descendant restored (same cultivar)",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 2; 5 example 2; 8.8 'ancestor versus descendant override'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A1",
+            "op": "exclude"
+          },
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i1",
+          "i2",
+          "i5",
+          "i6",
+          "i7",
+          "i8"
+        ]
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "D-025: A3 is nested under the excluded A1, so it only restores. A has no selecting include, so i5..i8 (no rule) stay in: base minus A1's items plus A3's items."
+}

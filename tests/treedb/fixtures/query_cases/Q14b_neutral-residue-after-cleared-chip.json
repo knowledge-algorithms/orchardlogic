@@ -1,0 +1,42 @@
+{
+  "id": "Q14b",
+  "title": "Ledger replay of: include A3, clear A3 (neutral), include A4 (OD-6 family 3)",
+  "fixture": "F7/twocult8_shared",
+  "clause": "DISCOVERY known bug 'neutral residue'; ARCH 8.8",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "neutral"
+          },
+          {
+            "cultivar": "A",
+            "node": "A4",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "error": "NEUTRAL_UNSUPPORTED"
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "Observed UI: result {i1,i2,i3,i4}; the cleared A3 still shields i1,i2. Order-independent positional semantics cannot order include-then-neutral on one node, so it is a conflict."
+}

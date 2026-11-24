@@ -1,0 +1,40 @@
+{
+  "id": "Q07",
+  "title": "Deep include in A, shallow exclude in B: exclusion still applies (no depth contest)",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 3 ('regardless of depth in a different cultivar'); 5 example 4; 8.8 'cross-cultivar exclusion'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A5",
+            "op": "include"
+          },
+          {
+            "cultivar": "B",
+            "node": "B1",
+            "op": "exclude"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i7",
+          "i8"
+        ]
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "A5 (depth 2) is deeper than B1 (depth 1). Observed UI lets A5 win for i6; candidate removes i6 because B1 excludes it."
+}

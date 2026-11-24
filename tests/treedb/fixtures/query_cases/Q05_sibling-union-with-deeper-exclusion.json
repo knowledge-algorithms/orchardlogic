@@ -1,0 +1,45 @@
+{
+  "id": "Q05",
+  "title": "Sibling union where one branch has a deeper exclusion",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 example 1 ('unless a deeper explicit exclusion applies')",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A5",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A6",
+            "op": "exclude"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i1",
+          "i2",
+          "i6"
+        ]
+      }
+    }
+  ],
+  "permute": true
+}

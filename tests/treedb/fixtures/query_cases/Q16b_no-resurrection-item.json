@@ -1,0 +1,67 @@
+{
+  "id": "Q16b",
+  "title": "Later Execute cannot reach an outside item by including it directly (ignore or error)",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 4 + step 6",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A1",
+            "op": "include"
+          }
+        ]
+      },
+      "result_as": "c1",
+      "expected": {
+        "items": [
+          "i1",
+          "i2",
+          "i3",
+          "i4"
+        ]
+      }
+    },
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c1"
+        },
+        "rules": [
+          {
+            "item": "i7",
+            "op": "include"
+          }
+        ]
+      },
+      "result_as": "c2",
+      "expected": {
+        "items": [
+          "i1",
+          "i2",
+          "i3",
+          "i4"
+        ],
+        "ignored_rules": [
+          {
+            "item": "i7",
+            "op": "include",
+            "reason": "out_of_base"
+          }
+        ]
+      }
+    }
+  ],
+  "permute": false
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Q14a",
+  "title": "A neutral rule on a node that has no other rule (OD-6 family 3)",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 ('query neutral ... should not be imported accidentally'); 8.8 'no untested UI neutral side effects'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A4",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "neutral"
+          }
+        ]
+      },
+      "expected": {
+        "error": "NEUTRAL_UNSUPPORTED"
+      }
+    }
+  ],
+  "permute": true,
+  "notes": "positional = the observed UI reading: a neutral rule wins by depth and leaves its items in scope, shielding them from the default exclusion."
+}

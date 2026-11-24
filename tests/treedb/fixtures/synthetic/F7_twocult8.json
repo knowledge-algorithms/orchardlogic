@@ -1,0 +1,140 @@
+{
+  "cases": {
+    "cohorts": [
+      {
+        "cultivar": "A",
+        "item_ids": ["i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8"],
+        "kind": "whole",
+        "name": "A.whole"
+      },
+      {
+        "cultivar": "A",
+        "item_ids": ["i1", "i2", "i5", "i6"],
+        "kind": "root_lca",
+        "name": "A.root_lca"
+      },
+      {
+        "cultivar": "A",
+        "item_ids": ["i1", "i2", "i3", "i4"],
+        "kind": "stem",
+        "name": "A.stem"
+      },
+      {
+        "cultivar": "A",
+        "item_ids": ["i1"],
+        "kind": "single",
+        "name": "A.single"
+      },
+      {
+        "cultivar": "A",
+        "item_ids": ["i1", "i2"],
+        "kind": "siblings",
+        "name": "A.siblings"
+      },
+      {
+        "cultivar": "B",
+        "item_ids": ["i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8"],
+        "kind": "whole",
+        "name": "B.whole"
+      },
+      {
+        "cultivar": "B",
+        "item_ids": ["i1", "i2", "i3", "i4"],
+        "kind": "root_lca",
+        "name": "B.root_lca"
+      },
+      {
+        "cultivar": "B",
+        "item_ids": ["i1", "i2", "i5", "i6"],
+        "kind": "stem",
+        "name": "B.stem"
+      },
+      {
+        "cultivar": "B",
+        "item_ids": ["i1"],
+        "kind": "single",
+        "name": "B.single"
+      },
+      {
+        "cultivar": "B",
+        "item_ids": ["i1", "i5"],
+        "kind": "siblings",
+        "name": "B.siblings"
+      }
+    ],
+    "entry_points": [
+      {
+        "cultivar": "A",
+        "name": "A.internal_entry",
+        "node_key": "member_2fc40ff07401eb367010068dd0c7816fe795e7114a67da284b4d16f4ed74b06f",
+        "note": "non-leaf entry point (INV-7)"
+      },
+      {
+        "cultivar": "B",
+        "name": "B.internal_entry",
+        "node_key": "member_21d437f4b23322ac9bdb08bbca6400588421a0759ef466412cdc19d866459880",
+        "note": "non-leaf entry point (INV-7)"
+      }
+    ],
+    "mutations": []
+  },
+  "cultivars": [
+    {
+      "label_sets": {
+        "p5a_nodes": {
+          "member_2fc40ff07401eb367010068dd0c7816fe795e7114a67da284b4d16f4ed74b06f": "A1",
+          "member_4095410367b1d9b5744ad53faf7f7987373b4e74f3359f79b14e263b4277acdc": "A2",
+          "member_53e815111659d78abbd96b0b4cf853c824bccc6691abf616d1cd7e395c352e90": "A0",
+          "member_556f136cbb475c3c89f743653fd444122066f9f15762993b8dbca67bf1f031e2": "A3",
+          "member_629664380cb3206b118532c21498e5d3d6da038f621fc518cfee706cf1f116e0": "A5",
+          "member_77520b4e7ddd1dd28c00f47c603609eb8f6d4b5acb29d87259b21dca98bd867a": "A6",
+          "member_a60512d5e0c6f70fd41dd32230211fd22dd4ecf3973f4bd2b2938f9d91a002c5": "A4"
+        }
+      },
+      "name": "A",
+      "z": [
+        [0, 1, 0.1, 2],
+        [2, 3, 0.2, 2],
+        [8, 9, 0.3, 4],
+        [6, 7, 0.4, 2],
+        [5, 11, 0.5, 3],
+        [4, 12, 0.6, 4],
+        [10, 13, 0.7, 8]
+      ]
+    },
+    {
+      "label_sets": {
+        "p5a_nodes": {
+          "member_0e8d7f98c0095cd52e0decab4b8077c765aa6df331a9e5d11faad25c01aa1d22": "B4",
+          "member_120e30a32c2d95c4443b39fe09f94a37a1491657cc1ad6ff0c8eede5b09ac636": "B6",
+          "member_21d437f4b23322ac9bdb08bbca6400588421a0759ef466412cdc19d866459880": "B1",
+          "member_53e815111659d78abbd96b0b4cf853c824bccc6691abf616d1cd7e395c352e90": "B0",
+          "member_78922abcebca2523ca0bcfe5405f671c07d283f1101a4844121260e88a87d12a": "B2",
+          "member_a2cbac97d22bbb4f1e7f0facb5030a3cd6eb556872870b3aee7cc0eafb6544c1": "B3",
+          "member_e6a45e79c98f144b6df7d94e1fbd886684678a26033b61e24c9e2ae18f0b0ca3": "B5"
+        }
+      },
+      "name": "B",
+      "z": [
+        [0, 4, 0.1, 2],
+        [1, 5, 0.2, 2],
+        [8, 9, 0.3, 4],
+        [3, 7, 0.4, 2],
+        [6, 11, 0.5, 3],
+        [2, 12, 0.6, 4],
+        [10, 13, 0.7, 8]
+      ]
+    }
+  ],
+  "description": "P5A twocult8 (D-023): same 8 item_ids i1..i8 in cultivars A and B with different topologies",
+  "format": "treedb_fixture_v1",
+  "item_ids": ["i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8"],
+  "name": "twocult8_shared",
+  "provenance": {
+    "decision": "D-023",
+    "heights": "merge k (post-order) at (k + 1) / 10",
+    "source": "fixtures/query_cases/twocult8_topology.json",
+    "source_content_sha256": "9b48b8d928c5ddf26353aeb536946ba445ffb310873f3483dcc11974c8e170f6",
+    "source_fields": ["items", "cultivars"]
+  }
+}

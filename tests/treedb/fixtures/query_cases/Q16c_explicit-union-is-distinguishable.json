@@ -1,0 +1,83 @@
+{
+  "id": "Q16c",
+  "title": "Re-adding outside items requires an explicit new Execute on the broader base plus a cohort union (not an Execute re-inclusion)",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 4 ('explicit new query against a broader source and join/union'); 8.7 'explicit broader-base/union is distinguishable'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A1",
+            "op": "include"
+          }
+        ]
+      },
+      "result_as": "c1",
+      "expected": {
+        "items": [
+          "i1",
+          "i2",
+          "i3",
+          "i4"
+        ]
+      }
+    },
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A2",
+            "op": "include"
+          }
+        ]
+      },
+      "result_as": "c2",
+      "expected": {
+        "items": [
+          "i5",
+          "i6",
+          "i7",
+          "i8"
+        ]
+      }
+    },
+    {
+      "op": "cohort_union",
+      "operands": [
+        "c1",
+        "c2"
+      ],
+      "result_as": "c3",
+      "expected": {
+        "items": [
+          "i1",
+          "i2",
+          "i3",
+          "i4",
+          "i5",
+          "i6",
+          "i7",
+          "i8"
+        ]
+      }
+    }
+  ],
+  "permute": false,
+  "notes": "cohort_union is P4A cohort algebra, not part of Execute. Observed UI has no equivalent.",
+  "observed_applicable": false
+}

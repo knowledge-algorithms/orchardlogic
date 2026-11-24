@@ -1,0 +1,34 @@
+{
+  "id": "Q11a",
+  "title": "Rules only in A: B is unconstrained and does not restrict",
+  "fixture": "F7/twocult8_shared",
+  "clause": "ARCH 5 step 2 last sentence; 8.8 'unconstrained cultivar'",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "items": [
+          "i1",
+          "i2"
+        ]
+      }
+    }
+  ],
+  "permute": true
+}

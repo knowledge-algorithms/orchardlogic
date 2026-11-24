@@ -1,0 +1,42 @@
+{
+  "id": "Q13b2",
+  "title": "Same node: the exclude rule carries replace:true",
+  "fixture": "F7/twocult8_shared",
+  "clause": "OD-6 family 1, explicit-replace option",
+  "status": "accepted (D-025, G3 2026-11-09)",
+  "cohorts": {
+    "c0": "all"
+  },
+  "steps": [
+    {
+      "query": {
+        "version": "0.1-candidate",
+        "base": {
+          "cohort": "c0"
+        },
+        "rules": [
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "include"
+          },
+          {
+            "cultivar": "A",
+            "node": "A3",
+            "op": "exclude",
+            "replace": true
+          },
+          {
+            "cultivar": "A",
+            "node": "A4",
+            "op": "include"
+          }
+        ]
+      },
+      "expected": {
+        "error": "REPLACE_UNSUPPORTED"
+      }
+    }
+  ],
+  "permute": true
+}

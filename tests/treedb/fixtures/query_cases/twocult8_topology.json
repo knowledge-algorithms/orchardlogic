@@ -1,0 +1,30 @@
+{
+  "_comment": "INLINE definition of fixture F5 twocult8 for P5A. Reconcile with P1's fixtures/ copy once available (node names and item ids are P5A-local labels).",
+  "items": ["i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8"],
+  "cultivars": {
+    "A": {
+      "root": "A0",
+      "nodes": {
+        "A0": ["A1", "A2"],
+        "A1": ["A3", "A4"],
+        "A3": ["i1", "i2"],
+        "A4": ["i3", "i4"],
+        "A2": ["i5", "A5"],
+        "A5": ["i6", "A6"],
+        "A6": ["i7", "i8"]
+      }
+    },
+    "B": {
+      "root": "B0",
+      "nodes": {
+        "B0": ["B1", "B2"],
+        "B1": ["B3", "B4"],
+        "B3": ["i1", "i5"],
+        "B4": ["i2", "i6"],
+        "B2": ["i3", "B5"],
+        "B5": ["i7", "B6"],
+        "B6": ["i4", "i8"]
+      }
+    }
+  }
+}
