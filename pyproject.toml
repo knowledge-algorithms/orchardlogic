@@ -35,8 +35,8 @@ taxonomy-ml = ["torch>=2.2", "transformers>=4.41"]
 labeling = ["openai>=1.40"]
 
 [project.urls]
-Homepage = "https://github.com/doc1000/orchardlogic"
-Issues = "https://github.com/doc1000/orchardlogic/issues"
+Homepage = "https://github.com/knowledge-algorithms/orchardlogic"
+Issues = "https://github.com/knowledge-algorithms/orchardlogic/issues"
 
 [dependency-groups]
 dev = ["pytest>=8.4,<9"]

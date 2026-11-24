@@ -98,5 +98,5 @@ Apache License 2.0. Copyright 2026 Energy Algorithms, LLC. See [LICENSE](LICENSE
 
 ## Contributing
 
-Issues and pull requests: https://github.com/doc1000/orchardlogic/issues.
+Issues and pull requests: https://github.com/knowledge-algorithms/orchardlogic/issues.
 See [CONTRIBUTING.md](CONTRIBUTING.md).

@@ -1,7 +1,7 @@
 # Contributing
 
 Bug reports and pull requests are welcome at
-https://github.com/doc1000/orchardlogic/issues.
+https://github.com/knowledge-algorithms/orchardlogic/issues.
 
 ## Setup
 
